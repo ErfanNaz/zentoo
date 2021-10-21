@@ -1,0 +1,91 @@
+#services {
+  >.container-fluid {
+    background-color: $color_gray;
+  }
+  .InfoContainer {
+    padding-top: 100px;
+    .col-md-4 {
+      @media(max-width: $screen-sm-max) {
+        padding-left: 0px;
+        padding-right: 0px;
+      }
+    }
+    .infoBox {
+      height: 400px;
+      background-color: $color_gray_light;
+      text-align: center;
+      padding-top: 60px;
+      margin-bottom: 20px;
+      transition: background-color .5s ease-in-out;
+      @media(max-width: $screen-sm-max) {
+        margin-bottom: 80px;
+      }
+      &:hover {
+        background-color: $color_gray_dark;
+        .iconContainer {
+          .icon {
+            background-color: $color_gray_dark;
+            color: $color_gray_light;
+            i {
+              border-color: $color_gray_light;
+            }
+          }
+        }
+        h2 {
+          color: $color_magenta;
+        }
+        ul {
+          color: $color_gray_light;
+        }
+      }
+      .iconContainer {
+        width: calc(100% - 30px);
+        position: absolute;
+        top: -60px;
+        @media(max-width: $screen-sm-max) {
+          width: 100%;
+        }
+        .icon {
+          width: 120px;
+          height: 120px;
+          padding-top: 20px;
+          background-color: $color_gray_light;
+          border-radius: 60px;
+          margin-left: auto;
+          margin-right: auto;
+          color: $color_magenta;
+          transition: all .5s ease-in-out;
+          i {
+            width: 80px;
+            height: 80px;
+            padding: 5px;
+            border-radius: 45px;
+            padding-top: 10px;
+            border: 2px solid $color_magenta;
+            transition: border-color .5s ease-in-out;
+          }
+        }
+      }
+      h2 {
+        background-color: white;
+        color: darken($color_gray_dark, 20);
+        font-weight: 200;
+        text-align: center;
+        padding: 20px 0;
+        transition: all .5s ease-in-out;
+      }
+      ul {
+        margin-top: 20px;
+        text-align: left;
+        list-style-type: none;
+        font-size: 1.2em;
+        transition: color .5s ease-in-out;
+      }
+    }
+  }
+  .serviceText {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}

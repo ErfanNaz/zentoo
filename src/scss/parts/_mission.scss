@@ -1,0 +1,9 @@
+#mission {
+  text-align: center;
+  >.container-fluid {
+    background-color: $color_gray;
+  }
+  .container>div {
+    margin: 30px 0;
+  }
+}

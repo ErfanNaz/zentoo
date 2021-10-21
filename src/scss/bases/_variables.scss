@@ -1,0 +1,13 @@
+/* size variables */
+$screen-xs-max: 767px;
+$screen-sm-min: 768px;
+$screen-sm-max: 991px;
+$screen-md-min: 992px;
+$screen-md-max: 1199px;
+$screen-lg-min: 1200px;
+
+$color_black: rgb(0, 0, 0);
+$color_magenta: rgb(229,36,75);
+$color_gray: rgb(234,231,226);
+$color_gray_dark: rgb(113,113,113);
+$color_gray_light: lighten($color_gray, 5);

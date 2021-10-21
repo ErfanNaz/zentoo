@@ -1,0 +1,105 @@
+header {
+  &.intro {
+    display: table;
+    width: 100%;
+    height: 100vh;
+    padding: 100px 0;
+    text-align: center;
+    color: white;
+    background-color: black;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    @media(min-width: $screen-sm-min) {
+      padding: 0;
+      background-image: url(/assets/img/intro-bg-big.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      .intro-body {
+        .brand-heading {
+          font-size: 100px;
+        }
+        .intro-text {
+          font-size: 26px;
+        }
+      }
+    }
+    @media(max-width:$screen-xs-max) {
+      background-image: url(/assets/img/intro-bg-small.jpg);
+      background-position: top center;
+    }
+    .intro-body {
+      display: table-cell;
+      vertical-align: middle;
+      .brand-heading {
+        font-size: 40px;
+      }
+      .intro-text {
+        font-size: 18px;
+      }
+    }
+    .logo-box {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      color: $color_magenta;
+      @media(max-width: $screen-xs-max) {
+        width: 130px;
+        left: 0;
+        margin-left: 10px;
+      }
+      img {
+        max-height: 100%;
+        max-width: 100%;
+      }
+      .description {
+        letter-spacing: 0.15em;
+        @media(max-width: $screen-xs-max) {
+          letter-spacing: normal;
+        }
+      }
+    }
+  }
+  .btn-circle {
+    width: 70px;
+    height: 70px;
+    margin-top: 15px;
+    padding: 7px 16px;
+    border: 2px solid white;
+    border-radius: 100% !important;
+    font-size: 40px;
+    color: white;
+    background: transparent;
+    -webkit-transition: background .3s ease-in-out;
+    -moz-transition: background .3s ease-in-out;
+    transition: background .3s ease-in-out;
+    &:hover,
+    &:focus {
+      outline: none;
+      color: white;
+      background: rgba(white, 0.1);
+    }
+    i.animated {
+      -webkit-transition-property: -webkit-transform;
+      -webkit-transition-duration: 1s;
+      -moz-transition-property: -moz-transform;
+      -moz-transition-duration: 1s;
+    }
+    &:hover {
+      i.animated {
+        -webkit-animation-name: pulse;
+        -moz-animation-name: pulse;
+        -webkit-animation-duration: 1.5s;
+        -moz-animation-duration: 1.5s;
+        -webkit-animation-iteration-count: infinite;
+        -moz-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+        -moz-animation-timing-function: linear;
+      }
+    }
+  }
+}

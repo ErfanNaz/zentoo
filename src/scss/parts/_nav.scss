@@ -1,0 +1,270 @@
+nav {
+  //overlay start
+  &.overlayer {
+    position: fixed;
+    font-weight: lighter;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0;
+    padding: 0;
+    display: table;
+    &.fade-out {
+      &.fade-in {
+        z-index: 10;
+        -webkit-animation: fadeIn ease-in 1;
+        -moz-animation: fadeIn ease-in 1;
+        animation: fadeIn ease-in 1;
+        -webkit-animation-fill-mode: forwards;
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 0.2s;
+        -moz-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+      }
+    }
+    &.fade-out {
+      -webkit-animation: fadeOut ease-in 1;
+      -moz-animation: fadeOut ease-in 1;
+      animation: fadeOut ease-in 1;
+      -webkit-animation-fill-mode: forwards;
+      -moz-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+      -webkit-animation-duration: 0.2s;
+      -moz-animation-duration: 0.2s;
+      animation-duration: 0.2s;
+    }
+    .nav {
+      padding-left: 15px;
+      margin-bottom: auto;
+      cursor: url(/assets/img/cursor_close.png), default;
+    }
+    >div {
+      display: table-cell;
+      vertical-align: middle;
+    }
+    ul {
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 0;
+      list-style-type: none;
+      li {
+        cursor: pointer;
+        font-size: 4em;
+        text-align: center;
+        @media(max-width: $screen-xs-max) {
+          font-size: 2.5em;
+        }
+        &:hover a {
+          color: white;
+          width: 100%;
+          float: left;
+          text-align: center;
+          &:hover {
+            transition: 0.2s ease-in-out;
+            background-color: $color_magenta;
+            color: #ffffff;
+          }
+        }
+        &.active {
+          a {
+            color: white;
+            background-color: $color_magenta;
+          }
+        }
+        a {
+          width: 100%;
+          display: block;
+          color: $color_magenta;
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  } //overlay start
+  //navbar start
+  &.navbar-custom {
+    margin-bottom: 0;
+    color: $color_magenta;
+    background-color: rgba($color_gray, 0.9);
+    @media(min-width: $screen-sm-min) {
+      padding: 20px 0;
+      border-bottom: none;
+      letter-spacing: 1px;
+      background: transparent;
+      -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+      -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+      transition: background .5s ease-in-out, padding .5s ease-in-out;
+    }
+    @media(max-width:$screen-xs-max) {
+      border-bottom: 1px solid rgba($color_gray_dark, 0.5);
+    }
+    &.top-nav-collapse {
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba($color_gray_dark, 0.5);
+      @media(min-width: $screen-sm-min) {
+        padding: 0;
+        background-color: rgba($color_gray, 0.9);
+      }
+      .navbar-brand {
+        img {
+          height: 80%;
+          width: 80%;
+          margin-top: 4px;
+          transition: width .3s ease-in-out;
+        }
+      }
+    }
+    .navbar-toggle {
+      padding: 4px 6px;
+      font-size: 16px;
+      color: white;
+      &:focus,
+      &:active {
+        outline: none;
+      }
+    }
+    .navbar-header {
+      @media(max-width: $screen-xs-max) {
+        max-width: 200px;
+        display: inline-block;
+      }
+    }
+    .navbar-brand {
+      padding: 2px 15px;
+      @media(max-width: $screen-xs-max) {
+        padding: 5px 10px;
+        padding-top: 7px;
+      }
+      img {
+        height: 100%;
+        width: 100%;
+        transition: width .3s ease-in-out;
+        @media(max-width: $screen-xs-max) {
+          height: 80%;
+          width: 80%;
+          margin-top: 6px;
+        }
+      }
+    }
+    .nav {
+      @media(max-width: $screen-xs-max) {
+        display: inline-block;
+        float: right;
+        margin: 0;
+        margin-top: 4px;
+      }
+      li {
+        a {
+          -webkit-transition: background .3s ease-in-out;
+          -moz-transition: background .3s ease-in-out;
+          transition: background .3s ease-in-out;
+          &:hover {
+            color: rgba(white, 0.8);
+            outline: none;
+            background-color: transparent;
+          }
+          &:focus,
+          &:active {
+            outline: none;
+            background-color: transparent;
+          }
+        }
+        &.active {
+          outline: none;
+          a {
+            background-color: rgba(white, 0.3);
+            &:hover {
+              color: white;
+            }
+          }
+        }
+      }
+    }
+    .menuText {
+      font-size: 33px;
+      font-weight: 100;
+      @media(max-width: $screen-xs-max) {
+        display: none;
+      }
+    }
+    .hamburger {
+      padding-bottom: 5px;
+      padding-top: 13px;
+      @media(max-width: $screen-xs-max) {
+        padding: 10px;
+      }
+    }
+    .hamburger-inner,
+    .hamburger-inner:after,
+    .hamburger-inner:before {
+      background-color: $color_magenta;
+      @media(max-width: $screen-xs-max) {
+        width: 35px;
+        height: 3px;
+      }
+    }
+  } //navbar end
+}
+
+
+
+/* make keyframes that tell the start state and the end state of our object */
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-moz-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

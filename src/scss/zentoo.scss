@@ -1,0 +1,91 @@
+@import "./../../node_modules/bootstrap/dist/css/bootstrap.css";
+@import "./../../node_modules/bootstrap/dist/css/bootstrap-theme.css";
+@import "./../../node_modules/font-awesome/css/font-awesome.css";
+@import "./../../node_modules/hamburgers/dist/hamburgers.css";
+@import "./../../node_modules/animate.css/animate.css";
+// base
+@import "./bases/variables";
+// parts
+@import "./parts/nav";
+@import "./parts/intro";
+@import "./parts/footer";
+@import "./parts/about";
+@import "./parts/services";
+@import "./parts/works";
+@import "./parts/mission";
+@import "./parts/contact";
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $color_gray_dark;
+  background-color: $color_gray;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color_magenta;
+  text-align: center;
+  font-weight: lighter;
+}
+
+section {
+  margin-top: -50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  .container {
+    >h1 {
+      font-weight: 200;
+    }
+    >h2 {
+      font-weight: 200;
+    }
+    >div:not(.text-center) {
+      text-align: left;
+    }
+  }
+}
+
+pre {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body {
+  &.menuOpen {
+    section,
+    header,
+    footer {
+      -webkit-filter: blur(5px) grayscale(100%);
+      /* Chrome, Safari */
+      -ms-filter: blur(5px) grayscale(100%);
+      /* IE12? */
+      filter: blur(5px) grayscale(100%);
+    }
+  }
+  @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+    &.menuOpen {
+      section,
+      header,
+      footer {
+        -webkit-filter: none;
+        /* Chrome, Safari */
+        -ms-filter: none;
+        /* IE12? */
+        filter: none;
+      }
+      nav {
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+    }
+  }
+}
